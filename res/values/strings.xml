@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, ShoppingListActivity!</string>
+    <string name="app_name">Shopping List</string>
+    <string name="wallet_question">How much money do you have?</string>
+    <string name="menu_insert">Add Item</string>
+    <string name="menu_delete">Delete Item</string>
+    <string name="no_items">Please use options to add an item.</string>
+    <string name="name">Name of Item</string>
+    <string name="price">Price of Item</string>
+    <string name="confirm">Confirm</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="bought_items_label">Bought Items</string>
+</resources>
