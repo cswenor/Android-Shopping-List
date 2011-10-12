@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
@@ -95,16 +94,6 @@ public class PurchasedItemsActivity extends Activity {
 			
        	    itemCursor.moveToNext();
         }
-	}
-	private void buyItems(){
-		// Grab money in wallet
-		// Grab All of the Items in the shopping list
-		// Loop through
-		// If can afford item
-		// 		Purcase Item
-		// 		Place Item in Bought List
-		// Else 
-		// 		Place Item in Still Need List
 	}
 
 

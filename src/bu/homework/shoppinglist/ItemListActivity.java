@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
 
 import com.commonsware.cwac.tlv.TouchListView;
 
@@ -33,7 +32,6 @@ public class ItemListActivity extends ListActivity {
 	    super.onCreate(savedInstanceState);
 	    
 	     MyDropListener onDrop = new MyDropListener();
-	     MyDragListener onDrag = new MyDragListener();
 	     
 	     setContentView(R.layout.item_list);
 	     mDbHelper = new ItemsModel(this);
@@ -41,7 +39,6 @@ public class ItemListActivity extends ListActivity {
          fillList();
          TouchListView itemListView = (TouchListView) getListView();
          itemListView.setDropListener(onDrop);
-         itemListView.setDragListener(onDrag);
          registerForContextMenu(itemListView);
 	}
 	
@@ -109,12 +106,6 @@ public class ItemListActivity extends ListActivity {
 	private class MyDropListener implements TouchListView.DropListener {
 		public void drop(int from, int to) {
 			
-			Object item = notes.getItem(from);
-			
-		}
-	}
-	private class MyDragListener implements TouchListView.DragListener {
-		public void drag(int from, int to) {
 			
 		}
 	}

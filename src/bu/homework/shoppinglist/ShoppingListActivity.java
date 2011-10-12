@@ -1,6 +1,5 @@
 package bu.homework.shoppinglist;
 
-import android.app.Application;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;

@@ -26,7 +26,7 @@ public class MoneyInHandActivity extends Activity {
 	    		if(!s.toString().equals(current)){ // Check to make sure that the string has actually changed
 	    			etWalletAmount.removeTextChangedListener(this); // Remove the listener so it doesn't get called before this function has finished
 	    			
-	    			// Grabs the correct currency symbole and cleans the string
+	    			// Grabs the correct currency symbol and cleans the string
 	    			String replaceable = String.format("[%s,.\\s]", NumberFormat.getCurrencyInstance().getCurrency().getSymbol());
 	    			String cleanString = s.toString().replaceAll(replaceable,"");
 	    			
@@ -40,7 +40,7 @@ public class MoneyInHandActivity extends Activity {
 	    			// Sets the reformatted text to the edittext field
 	    			etWalletAmount.setText(formated);
 	    			MyWallet appState = ((MyWallet)getApplicationContext());
-	    		    String state = appState.getState();
+	    			
 	    		    appState.setState(formated);
 
 	    			

@@ -175,14 +175,15 @@ public class ItemsModel {
     	return highPriority;
     }
     
-    public void adjustPriority(long rowID, int newPriority) {
+    public void adjustPriority(long rowID, int oldPriority, int newPriority) {
     	
     	Cursor itemCursor = this.fetchAllItems();
 	    itemCursor.moveToFirst();
 	    int cursRowID = -100;
+	    int cursPriority = -100;
+	    int i = 0;
 	    String cursName = new String();
 	    String cursPrice = new String();
-	    int oldPriority = this.fetchItem(rowID).getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_ROWID));
 	    
 		while (itemCursor.isAfterLast() == false) {
 //			cursRowID = itemCursor.getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_ROWID));
@@ -192,7 +193,7 @@ public class ItemsModel {
 //			// if cursPriority > oldPriority and cursPriority <= newPriority then
 //			// cursItem.priority - 1
 //			// if cursPriority = oldPriority then cursItem.priority = newPriority
-//			if(itemCursor.getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_PRIORITY)) > oldPriority && itemCursor.getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_PRIORITY)) <= newPriority) {
+//			if(cursPriority > oldPriority && cursPriority <= newPriority) {
 //				this.updateItem(cursRowID, name, price, priority)
 //			}
 //			shoppingItem = new ShoppingItem(itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_NAME)));
@@ -203,8 +204,8 @@ public class ItemsModel {
 //			} else {
 //				adapter.addItem(shoppingItem, "Still Need");
 //			}
-			
-       	    itemCursor.moveToNext();
+//			i++;
+//       	    itemCursor.moveToNext();
         }
     	
     }
