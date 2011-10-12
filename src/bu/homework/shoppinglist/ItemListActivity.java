@@ -105,7 +105,8 @@ public class ItemListActivity extends ListActivity {
 	
 	private class MyDropListener implements TouchListView.DropListener {
 		public void drop(int from, int to) {
-			
+			mDbHelper.adjustPriority(from, to);
+			fillList();
 			
 		}
 	}

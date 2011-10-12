@@ -175,37 +175,33 @@ public class ItemsModel {
     	return highPriority;
     }
     
-    public void adjustPriority(long rowID, int oldPriority, int newPriority) {
+    public void adjustPriority(int oldPriority, int newPriority) {
     	
     	Cursor itemCursor = this.fetchAllItems();
 	    itemCursor.moveToFirst();
 	    int cursRowID = -100;
-	    int cursPriority = -100;
 	    int i = 0;
+	    int p = 0;
 	    String cursName = new String();
 	    String cursPrice = new String();
 	    
 		while (itemCursor.isAfterLast() == false) {
-//			cursRowID = itemCursor.getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_ROWID));
-//			cursName = itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_NAME));
-//			cursPrice = itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_PRICE));
-//			cursPriority = itemCursor.getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_PRIORITY));
-//			// if cursPriority > oldPriority and cursPriority <= newPriority then
-//			// cursItem.priority - 1
-//			// if cursPriority = oldPriority then cursItem.priority = newPriority
-//			if(cursPriority > oldPriority && cursPriority <= newPriority) {
-//				this.updateItem(cursRowID, name, price, priority)
-//			}
-//			shoppingItem = new ShoppingItem(itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_NAME)));
-//			shoppingItem.setPrice(itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_PRICE)));
-//			if(moneyLeft >= Double.parseDouble(shoppingItem.getPrice())) {
-//				adapter.addItem(shoppingItem, "Bought");
-//				moneyLeft -= Double.parseDouble(shoppingItem.getPrice());
-//			} else {
-//				adapter.addItem(shoppingItem, "Still Need");
-//			}
-//			i++;
-//       	    itemCursor.moveToNext();
+			cursRowID = itemCursor.getInt(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_ROWID));
+			cursName = itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_NAME));
+			cursPrice = itemCursor.getString(itemCursor.getColumnIndexOrThrow(ItemsModel.KEY_PRICE));
+			
+			if( i == oldPriority ) {
+				this.updateItem(cursRowID, cursName, cursPrice, newPriority);
+			} else {
+				if( p == newPriority){
+					p++;
+				}
+				this.updateItem(cursRowID, cursName, cursPrice, p);
+				p++;
+			}
+			
+			itemCursor.moveToNext();
+			i++;
         }
     	
     }

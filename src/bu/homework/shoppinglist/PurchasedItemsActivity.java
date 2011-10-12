@@ -67,17 +67,15 @@ public class PurchasedItemsActivity extends Activity {
 		adapter.clear();
 		MyWallet appState = ((MyWallet)getApplicationContext());
 	    String state = appState.getState();
-		// EditText mWalletText = (EditText) findViewById(R.id.wallet_amount);
-		// String moneyLeft = mWalletText.getText().toString();
-		// double moneyLeft = Double.parseDouble(mWalletText.getText().toString());
-		// double moneyLeft = 67.00;
+
+		double moneyLeft = 67.00;
 	 
 	    // Grabs the correct currency symbol and cleans the string
 		String replaceable = String.format("[%s,.\\s]", NumberFormat.getCurrencyInstance().getCurrency().getSymbol());
 		String cleanString = state.toString().replaceAll(replaceable,"");
 		
 		// Converts the string and converts it to currency format
-		double moneyLeft = Double.parseDouble(cleanString) / 100;
+		moneyLeft = Double.parseDouble(cleanString) / 100;
 		
 		Cursor itemCursor = mDbHelper.fetchAllItems();
 	    itemCursor.moveToFirst();

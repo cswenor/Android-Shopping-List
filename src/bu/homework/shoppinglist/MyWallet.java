@@ -3,7 +3,7 @@ package bu.homework.shoppinglist;
 import android.app.Application;
 
 public class MyWallet extends Application {
-	  private String myMoney;
+	  private String myMoney = "0.00";
 
 	  public String getState(){
 	    return myMoney;
