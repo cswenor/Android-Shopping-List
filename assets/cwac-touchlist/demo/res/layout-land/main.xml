@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+  <Button android:layout_width="0dip" android:layout_weight="1"
+    android:layout_height="fill_parent" android:text="Um, hi!" />
+	<com.commonsware.cwac.tlv.TouchListView
+		xmlns:tlv="http://schemas.android.com/apk/res/com.commonsware.cwac.tlv.demo"
+		android:id="@android:id/list" android:layout_width="0dip"
+		android:layout_weight="1" android:layout_height="fill_parent"
+		android:drawSelectorOnTop="false" tlv:normal_height="64dip"
+		tlv:grabber="@+id/icon" tlv:remove_mode="slideRight" />
+  <Button android:layout_width="0dip" android:layout_weight="1"
+    android:layout_height="fill_parent" android:text="Um, hi!" />
+</LinearLayout>
